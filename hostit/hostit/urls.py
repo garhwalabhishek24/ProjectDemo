@@ -27,5 +27,6 @@ urlpatterns = [
     path('price',view.price),
     path('service',view.service),
     path('userfrom',view.userform),
-    
+    path('calculator',view.calculator),
+    path('evenodd',view.evenodd),
 ]

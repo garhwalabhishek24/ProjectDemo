@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-8 col-lg-6 mx-auto">
+      <div class="form_container">
+        <form method="post">
+          {% csrf_token %}
+          <div>
+            <lable> value1</lable>
+            <input type="text" name="num1" class='from-control'/>
+          </div>
+          <div>
+            <lable>select Operation</lable>
+            <select name="opr " class="from-control"/>
+              <option value="+">+</lable>
+              <option value="-">-</lable>
+              <option value="*">*</lable>
+              <option value="/">/</lable>
+              </select>    
+                
+          </div>
+          <div>
+            <lable>value2</lable>
+            <input type="text" name="num2" class='from-control' >
+          </div>
+          
+          <div class="btn_box ">
+            <button type = "submit">
+              SEND
+            </button>
+          </div>
+          <div>
+            <lable> output</lable>
+            <input type="text" value={{c}} >
+          </div>  
+        </form> 
+      </div>
+    </div>  
+  </div> 

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-8 col-lg-6 mx-auto">
+      <div class="form_container">
+        <form method="post">
+          {% csrf_token %}
+          {% comment %} <div>
+            <lable> value1</lable>
+            <input type="text" name="num1" class='from-control'/>
+          </div> {% endcomment %}
+          
+          <div>
+            <lable>value2</lable>
+            <input type="text" name="num2" class='from-control' >
+            <button type = "submit">even|odd</button></br>
+            <lable> output</lable>
+            <input type="text" value={{c}}  class='from-control' />
+          </div>
+          
+          
+            
+              
+            
+{% comment %}           
+          <div>
+            <lable> output</lable>
+            <input type="text" value={{c}} > {% endcomment %}
+        </form> 
+      </div>
+    </div>  
+  </div> 

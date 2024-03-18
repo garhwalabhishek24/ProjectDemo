@@ -53,8 +53,9 @@
           <div class="form_container">
             <form method="post">
               {% csrf_token %}
-              <div>
-                <input type="text" name="name" placeholder="Your Name" />
+              {{form}}
+              {% comment %} <div> {% endcomment %}
+                {% comment %} {% comment %} <input type="text" name="name" placeholder="Your Name" />
               </div>
               <div>
                 <input type="email" name="email" placeholder="Your Email" />
@@ -64,7 +65,7 @@
               </div>
               <div>
                 <input type="text" class="message-box" placeholder="Message" />
-              </div>
+              </div>{% endcomment %}
               <div class="btn_box ">
                 <button type = "submit">
                   SEND
