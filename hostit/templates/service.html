@@ -53,17 +53,24 @@
     </div>
     <div class="container ">
       <div class="row">
+        <form method="get">
+          <input type="text" name="servicename" value=""/>
+          <input type="submit" value="search">
+        </form>  
+      </div> 
+        
+        {% for n in service_data %}
         <div class="col-md-6 col-lg-4">
           <div class="box ">
-            <div class="img-box">
+            <div class="{{n.icon}}">
               <img src="/static/images/s1.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
-                Shared Hosting
+                {{n.tittle}}
               </h4>
               <p>
-                Generators on the Internet tend to repeat predefined chunks as necessary
+                {{n.description}}
               </p>
               <a href="">
                 Read More
@@ -72,8 +79,13 @@
               </a>
             </div>
           </div>
+        
         </div>
-        <div class="col-md-6 col-lg-4">
+        {% empty %}
+        no data found
+         
+        {% endfor %} 
+        <!-- <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
               <img src="/static/images/s2.png" alt="">
@@ -92,8 +104,8 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4 ">
+        </div> -->
+        <!-- <div class="col-md-6 col-lg-4 ">
           <div class="box ">
             <div class="img-box">
               <img src="/static/images/s3.png" alt="">
@@ -112,8 +124,8 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
+        </div> -->
+        <!-- <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
               <img src="/static/images/s4.png" alt="">
@@ -132,9 +144,9 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-6 col-lg-4">
-          <div class="box ">
+          <!-- <div class="box ">
             <div class="img-box">
               <img src="/static/images/s5.png" alt="">
             </div>
@@ -152,8 +164,8 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
+        </div> -->
+        <!-- <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
               <img src="/static/images/s6.png" alt="">
@@ -172,8 +184,8 @@
               </a>
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
+      
     </div>
   </section>
 

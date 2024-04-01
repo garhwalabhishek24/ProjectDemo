@@ -29,4 +29,5 @@ urlpatterns = [
     path('userfrom',view.userform),
     path('calculator',view.calculator),
     path('evenodd',view.evenodd),
+    path('marksheet',view.marksheet)
 ]

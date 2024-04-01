@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import userform
+from features.models import services
 
 def aboutus(request):
     return render(request,"about.html")
@@ -14,7 +15,17 @@ def price(request):
     return render(request,"price.html")
 
 def service(request):
-    return render(request,"service.html")
+    service_data=services.objects.all()
+    if request.method=="GET":
+        st=request.GET.get("servicename")
+        if st!=None:
+            service_data=services.objects.filter( tittle__icontains=st)
+
+    data={
+        'service_data':service_data
+    }
+
+    return render(request,"service.html",data)
 
 def userform(request):
     fn=userform
@@ -63,5 +74,26 @@ def evenodd(request):
             c='odd number'    
     return render(request,"evenodd.html",{'c':c})
 
-   
+def marksheet(request):
+    if request.method=="POST":
+        s1=eval(request.POST.get("sub1"))
+        s2=eval(request.POST.get("sub2"))
+        s3=eval(request.POST.get("sub3"))
+        s4=eval(request.POST.get("sub4"))
+        t=s1+s2+s3+s4
+        p=t*100/400
+        if p>=65:
+            d="first division"
+        elif p>=49:
+            d='second division'
+        else:
+            d='failed'
+        data={
+            'total':t,
+            'percent':p,
+            'div':d
+        }            
+
+
+    return render(request,"marksheet.html",data)   
     
